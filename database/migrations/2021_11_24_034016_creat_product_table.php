@@ -14,7 +14,7 @@ class CreatProductTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
+            $table->id()->comment('編號');
             $table->date('transaction_date')->comment('交易日期');
             $table->string('product',191)->comment('農產品種類');
             $table->tinyInteger('mid')->unsigned()->comment('交易市場');

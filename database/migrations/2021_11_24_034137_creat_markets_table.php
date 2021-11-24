@@ -14,7 +14,7 @@ class CreatMarketsTable extends Migration
     public function up()
     {
         Schema::create('markets', function (Blueprint $table) {
-            $table->id();
+            $table->id()->comment('編號');
             $table->string('market',100)->comment('市場');
             $table->string('zone',100)->comment('區別');
             $table->string('address',100)->comment('地址');
