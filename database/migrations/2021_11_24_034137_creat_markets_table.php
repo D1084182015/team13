@@ -15,9 +15,9 @@ class CreatMarketsTable extends Migration
     {
         Schema::create('markets', function (Blueprint $table) {
             $table->id();
-            $table->string('product',100)->comment('市場');
-            $table->string('product',100)->comment('區別');
-            $table->string('product',100)->comment('地址');
+            $table->string('market',100)->comment('市場');
+            $table->string('zone',100)->comment('區別');
+            $table->string('address',100)->comment('地址');
             $table->timestamps();
         });
     }
