@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\MarketsController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +16,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return  "hello";
-});
+Route::resource("products",ProductsController::class);
+Route::resource("markets",MarketsController::class);
