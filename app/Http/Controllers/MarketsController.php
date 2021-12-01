@@ -15,7 +15,9 @@ class MarketsController extends Controller
     public function index()
     {
         //
-        return Market::all()->toArray();
+
+        $markets = market::all();
+        return view('markets.index')->with(['markets'=>$markets]);
     }
 
     /**
