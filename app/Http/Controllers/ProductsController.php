@@ -53,7 +53,8 @@ class ProductsController extends Controller
     public function show($id)
     {
         //
-        return "顯示單一筆農產品的紀錄(id = " . $id .")";
+        $product = Product::findOrFail($id);
+        return view('products.show')->with(['product'=>$product]);
 
     }
 

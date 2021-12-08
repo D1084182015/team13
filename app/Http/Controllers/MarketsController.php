@@ -50,6 +50,8 @@ class MarketsController extends Controller
     public function show($id)
     {
         //
+        $market = Market::findOrFail($id);
+        return view('markets.show')->with(['market'=>$market]);
     }
 
     /**

@@ -1,10 +1,10 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>顯示所有農產品資料</title>
+    <title>顯示所有市場資料</title>
 </head>
 <body>
-<h1>顯示所有農產品資料 </h1>
+<h1>顯示所有市場資料 </h1>
 <table border="1">
     <tr>
         <th>編號</th>
@@ -18,6 +18,11 @@
             <td>{{ $market->market }}</td>
             <td>{{ $market->zone }}</td>
             <td>{{ $market->address  }}</td>
+            <td>
+                <a href="markets/{{$market->id}}">
+                    詳細
+                </a>
+            </td>
         </tr>
     @endforeach
 </table>
