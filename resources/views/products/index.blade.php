@@ -16,6 +16,8 @@
     <th>下價</th>
     <th>平均價</th>
     <th>交易量</th>
+    <th>操作一</th>
+    <th>操作二</th>
 </tr>
     @foreach($products as $product)
         <tr>
@@ -31,6 +33,11 @@
             <td>
                 <a href="products/{{$product->id}}">
                     詳細
+                </a>
+            </td>
+            <td>
+                <a href="products/{{$product->id}}/edit">
+                    修改
                 </a>
             </td>
         </tr>

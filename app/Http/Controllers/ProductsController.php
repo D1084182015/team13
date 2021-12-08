@@ -67,7 +67,8 @@ class ProductsController extends Controller
     public function edit($id)
     {
         //
-        return "顯示單一筆農產品的編輯表單(id = " . $id .")";
+        $product = Product::findOrFail($id);
+        return view('products.edit')->with(['product'=>$product]);
 
     }
 
@@ -81,6 +82,19 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $product = Product::findOrFail($id);
+
+        $product->transaction_date = $request->input('transaction_date');
+        $product->product = $request->input('product');
+        $product->mid = $request->input('mid');
+        $product->high_price = $request->input('high_price');
+        $product->midium_price = $request->input('midium_price');
+        $product->low_price = $request->input('low_price');
+        $product->average_price = $request->input('average_price');
+        $product->trading_volume = $request->input('trading_volume');
+        $product->save();
+
+        return redirect('products');
     }
 
     /**

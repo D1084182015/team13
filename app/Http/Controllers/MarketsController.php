@@ -63,6 +63,8 @@ class MarketsController extends Controller
     public function edit($id)
     {
         //
+        $market = Market::findOrFail($id);
+        return view('markets.edit')->with(['market'=>$market]);
     }
 
     /**
@@ -75,6 +77,15 @@ class MarketsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $market = Market::findOrFail($id);
+
+        $market->market = $request->input('market');
+        $market->zone = $request->input('zone');
+        $market->address = $request->input('address');
+
+        $market->save();
+
+        return redirect('markets');
     }
 
     /**
