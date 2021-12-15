@@ -5,6 +5,7 @@
 </head>
 <body>
 <h1>顯示所有市場資料 </h1>
+<a href="markets/create">新增市場資料</a>
 <table border="1">
     <tr>
         <th>編號</th>

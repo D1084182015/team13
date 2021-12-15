@@ -5,6 +5,7 @@
 </head>
 <body>
 <h1>顯示所有農產品資料</h1>
+<a href="products/create">新增農產品</a>
 <table border="1">
 <tr>
     <th>編號</th>

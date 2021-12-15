@@ -27,8 +27,7 @@ class ProductsController extends Controller
     public function create()
     {
         //
-
-
+        return view('products.create');
     }
 
     /**
@@ -39,7 +38,6 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $transaction_date = $request->input('transaction_date');
         $product = $request->input('product');
         $mid = $request->input('mid');
@@ -51,17 +49,17 @@ class ProductsController extends Controller
 
         Product::create(
             [
-                'transaction_date' =>$transaction_date,
-                '$product'=>$product,
-                'mid'=>$mid,
-                'high_price'=>$high_price,
-                'midium_price'=>$midium_price,
-                'low_price'=>$low_price,
-                'average_price'=>$average_price,
-                'trading_volume'=>$trading_volume
+                'transaction_date' => $transaction_date,
+                'product' => $product,
+                'mid' => $mid,
+                'high_price' => $high_price,
+                'midium_price' => $midium_price,
+                'low_price' => $low_price,
+                'average_price' => $average_price,
+                'trading_volume' => $trading_volume
             ]
         );
-        return redirect('products');
+        return redirect('products'); // 觸發 /players 路由(用 get 方法)
 
     }
 

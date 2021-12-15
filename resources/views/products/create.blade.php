@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>新增農產品資料</h1>
-<form method="post" action="/products/">
+<form method="post" action="/products">
     @csrf
 
     <table border="1">

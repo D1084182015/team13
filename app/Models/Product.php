@@ -10,7 +10,7 @@ class Product extends Model
     use HasFactory;
     protected $fillable = [
         'transaction_date',
-        '$product',
+        'product',
         'mid',
         'high_price',
         'midium_price',
