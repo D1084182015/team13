@@ -27,7 +27,7 @@ class ProductsController extends Controller
     public function create()
     {
         //
-        return view('products.create');
+
 
     }
 
@@ -40,7 +40,28 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //
-        return "st";
+        $transaction_date = $request->input('transaction_date');
+        $product = $request->input('product');
+        $mid = $request->input('mid');
+        $high_price = $request->input('high_price');
+        $midium_price = $request->input('midium_price');
+        $low_price = $request->input('low_price');
+        $average_price = $request->input('average_price');
+        $trading_volume = $request->input('trading_volume');
+
+        Product::create(
+            [
+                'transaction_date' =>$transaction_date,
+                '$product'=>$product,
+                'mid'=>$mid,
+                'high_price'=>$high_price,
+                'midium_price'=>$midium_price,
+                'low_price'=>$low_price,
+                'average_price'=>$average_price,
+                'trading_volume'=>$trading_volume
+            ]
+        );
+        return redirect('products');
 
     }
 
@@ -105,6 +126,8 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect('products');
     }
 }

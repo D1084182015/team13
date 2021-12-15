@@ -96,6 +96,8 @@ class MarketsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $market = Market::findOrFail($id);
+        $market->delete();
+        return redirect('markets');
     }
 }

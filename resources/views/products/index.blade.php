@@ -18,6 +18,8 @@
     <th>交易量</th>
     <th>操作一</th>
     <th>操作二</th>
+    <th>操作三</th>
+
 </tr>
     @foreach($products as $product)
         <tr>
@@ -39,6 +41,14 @@
                 <a href="products/{{$product->id}}/edit">
                     修改
                 </a>
+            </td>
+            <td>
+                <form method ="post" action="products/{{$product->id}}">
+                    @csrf
+                    @method("delete")
+                    <input type="submit" value="刪除">
+                </form>
+
             </td>
         </tr>
     @endforeach

@@ -13,6 +13,7 @@
         <th>地址</th>
         <th>操作一</th>
         <th>操作二</th>
+        <th>操作三</th>
     </tr>
     @foreach($markets as $market)
         <tr>
@@ -29,6 +30,14 @@
                 <a href="markets/{{$market->id}}/edit">
                     修改
                 </a>
+            </td>
+            <td>
+                <form method ="post" action="markets/{{$market->id}}">
+                    @csrf
+                    @method("delete")
+                    <input type="submit" value="刪除">
+                </form>
+
             </td>
         </tr>
     @endforeach

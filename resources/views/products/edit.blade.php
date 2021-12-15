@@ -48,7 +48,7 @@
         </tr>
 
     </table>
-    <input type="submit" value="修改"/><input type="reset" value="重行輸入"/>
+    <input type="submit" value="修改"/><input type="reset" value="重新輸入"/>
 
 
 </form>
