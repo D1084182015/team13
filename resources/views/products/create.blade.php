@@ -11,7 +11,10 @@
     <table border="1">
         <tr>
             <td>交易日期</td>
-            <td><input type="text" name="transaction_date" /></td>
+            <td>
+                <label for="transaction_date"></label>
+                <input type="date" name="transaction_date">
+            </td>
         </tr>
         <tr>
             <td>農產品種類</td>
