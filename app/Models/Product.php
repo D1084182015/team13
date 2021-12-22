@@ -18,4 +18,15 @@ class Product extends Model
         'average_price',
         'trading_volume'
     ];
+
+    public function market()
+    {
+        return $this->belongsTo('App\Models\Market','mid','id');
+    }
+
+    public function scopeSenior($query)
+    {
+        $query->where('year', '>', 10)
+            ->orderBy('year');
+    }
 }

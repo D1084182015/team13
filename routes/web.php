@@ -14,5 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('products/senior', [ProductsController::class, 'senior'])->name('products.senior');
 Route::resource("products",ProductsController::class);
 Route::resource("markets",MarketsController::class);

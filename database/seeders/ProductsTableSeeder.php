@@ -36,7 +36,7 @@ class ProductsTableSeeder extends Seeder
            DB::table('products')->insert([
                'transaction_date'=>$transaction_date,
                'product'=>$product,
-               'mid'=>rand(1,4),
+               'mid'=>rand(1,25),
                'high_price'=>rand(67,98),
                'midium_price'=>rand(32,75),
                'low_price'=>rand(10,30),

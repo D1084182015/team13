@@ -8,7 +8,7 @@
 <form method="post" action="/products/{{$product->id}}">
     @method("put")
     @csrf
-
+    <a href="{{ route('products.index') }}">顯示所有農產品資料</a>
     <table border="1">
         <tr>
             <td>編號</td>
@@ -49,6 +49,8 @@
 
     </table>
     <input type="submit" value="修改"/><input type="reset" value="重新輸入"/>
+
+
 
 
 </form>

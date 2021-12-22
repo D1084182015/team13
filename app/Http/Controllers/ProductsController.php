@@ -15,7 +15,7 @@ class ProductsController extends Controller
     public function index()
     {
         //
-        $products = Product::all();
+        $products = Product::all()->sortBy('product');
         return view('products.index')->with(['products'=>$products]);
     }
 
@@ -127,5 +127,11 @@ class ProductsController extends Controller
         $product = Product::findOrFail($id);
         $product->delete();
         return redirect('products');
+    }
+
+    public function senior()
+    {
+        $product = Product::senior()->get();
+        return view('products.index', ['product'=>$product]);
     }
 }
