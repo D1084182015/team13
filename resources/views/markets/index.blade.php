@@ -5,10 +5,17 @@
 </head>
 <body>
 <h1>顯示所有市場資料 </h1>
-<a href="markets/create">新增市場資料</a>
+<a href="{{ route('markets.create') }}">新增市場資料</a>&nbsp;
+<a href="{{ route('products.index') }}">所有農產品</a><br/>
+<h2></h2>
+<a href="{{ route('markets.index') }}">所有市場資料</a>&nbsp;
+<a href="{{ route('markets.north') }}">北部市場</a>&nbsp;
+<a href="{{ route('markets.south') }}">南部市場</a>&nbsp;
+<a href="{{ route('markets.middle') }}">中部市場</a>&nbsp;
+<a href="{{ route('markets.east') }}">東部市場</a>
 <table border="1">
     <tr>
-        <th>編號</th>
+        <!--<th>編號</th>-->
         <th>市場</th>
         <th>區別</th>
         <th>地址</th>
@@ -18,7 +25,7 @@
     </tr>
     @foreach($markets as $market)
         <tr>
-            <td>{{ $market->id }}</td>
+            <!--<td>{{ $market->id }}</td>-->
             <td>{{ $market->market }}</td>
             <td>{{ $market->zone }}</td>
             <td>{{ $market->address  }}</td>

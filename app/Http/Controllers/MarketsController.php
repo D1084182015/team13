@@ -16,7 +16,7 @@ class MarketsController extends Controller
     {
         //
 
-        $markets = market::all();
+        $markets = market::all()->sortBy('zone');
         return view('markets.index')->with(['markets'=>$markets]);
     }
 
@@ -112,4 +112,26 @@ class MarketsController extends Controller
         $market->delete();
         return redirect('markets');
     }
+
+    public function north()
+    {
+        $markets = Market::zone('北部')->get();
+        return view('markets.index', ['markets'=>$markets]);
+    }
+    public function south()
+    {
+        $markets = Market::zone('南部')->get();
+        return view('markets.index', ['markets'=>$markets]);
+    }
+    public function middle()
+    {
+        $markets = Market::zone('中部')->get();
+        return view('markets.index', ['markets'=>$markets]);
+    }
+    public function east()
+    {
+        $markets = Market::zone('東部')->get();
+        return view('markets.index', ['markets'=>$markets]);
+    }
+
 }

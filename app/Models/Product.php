@@ -24,9 +24,13 @@ class Product extends Model
         return $this->belongsTo('App\Models\Market','mid','id');
     }
 
-    public function scopeSenior($query)
+    public function scopeSenior($high_price)
     {
-        $query->where('year', '>', 10)
-            ->orderBy('year');
+        $high_price->where('high_price', '>', 70)
+            ->orderBy('high_price');
+    }
+    public function scopeProduct($query, $product)
+    {
+        $query->where('product', '=', $product);
     }
 }

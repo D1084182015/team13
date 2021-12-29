@@ -14,7 +14,7 @@ class MarketsTableSeeder extends Seeder
      * @return void
      */
     public function generateRandomZone() {
-        $zones = ['東區', '北區','中區','南部'];
+        $zones = ['東部', '北部','中部','南部'];
         return $zones[rand(0, count($zones)-1)];
     }
 

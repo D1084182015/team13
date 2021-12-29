@@ -22,7 +22,19 @@
         </tr>
         <tr>
             <td>交易市場</td>
-            <td><input type="text" name="mid" /></td>
+            <td>
+                <select name="mid">
+                    <option value="">選擇市場</option>
+                    <option value="1" selected>台北一</option>
+                    <option value="2">台北二</option>
+                    <option value="3">板橋區</option>
+                    <option value="4">三重區</option>
+                    <option value="5">宜蘭市</option>
+                    <option value="6">台中市</option>
+                    <option value="7" >鳳山區</option>
+                    <option value="8">嘉義市</option>
+                </select>
+            </td>
         </tr>
         <tr>
             <td>上價</td>

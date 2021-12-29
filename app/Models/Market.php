@@ -18,4 +18,9 @@ class Market extends Model
     {
         return $this->hasMany('App\Models\Player','mid');
     }
+
+    public function scopeZone($query, $zone)
+    {
+        $query->where('zone', '=', $zone);
+    }
 }

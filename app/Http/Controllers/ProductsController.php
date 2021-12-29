@@ -131,7 +131,27 @@ class ProductsController extends Controller
 
     public function senior()
     {
-        $product = Product::senior()->get();
-        return view('products.index', ['product'=>$product]);
+        $products = Product::senior()->get();
+        return view('products.index', ['products'=>$products]);
+    }
+    public function banana()
+    {
+        $products = Product::product('香蕉')->get();
+        return view('products.index', ['products'=>$products]);
+    }
+    public function apple()
+    {
+        $products = Product::product('蘋果')->get();
+        return view('products.index', ['products'=>$products]);
+    }
+    public function sakyamuni()
+    {
+        $products = Product::product('釋迦')->get();
+        return view('products.index', ['products'=>$products]);
+    }
+    public function kyohogrape()
+    {
+        $products = Product::product('巨峰葡萄')->get();
+        return view('products.index', ['products'=>$products]);
     }
 }
