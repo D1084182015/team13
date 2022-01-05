@@ -1,14 +1,11 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>顯示所有市場資料</title>
-</head>
-<body>
+@extends('app')
+
+@section('title', '市場資料')
+
+@section('product_contents')
 <h1>顯示所有市場資料 </h1>
 <a href="{{ route('markets.create') }}">新增市場資料</a>&nbsp;
-<a href="{{ route('products.index') }}">所有農產品</a><br/>
 <h2></h2>
-<a href="{{ route('markets.index') }}">所有市場資料</a>&nbsp;
 <a href="{{ route('markets.north') }}">北部市場</a>&nbsp;
 <a href="{{ route('markets.south') }}">南部市場</a>&nbsp;
 <a href="{{ route('markets.middle') }}">中部市場</a>&nbsp;
@@ -50,5 +47,5 @@
         </tr>
     @endforeach
 </table>
-</body>
-</html>
+@endsection
+

@@ -154,4 +154,62 @@ class ProductsController extends Controller
         $products = Product::product('巨峰葡萄')->get();
         return view('products.index', ['products'=>$products]);
     }
+
+    public function api_products()
+    {
+        return Product::all();
+    }
+
+    public function api_update(Request $request)
+    {
+        $product = Product::find($request->input('id'));
+        if ($product == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+
+        $product->product = $request->input('product');
+        $product->mid = $request->input('mid');
+        $product->high_price = $request->input('high_price');
+        $product->midium_price = $request->input('midium_price');
+        $product->low_price = $request->input('low_price');
+        $product->average_price = $request->input('average_price');
+        $product->trading_volume = $request->input('trading_volume');
+
+        if ($product->save())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        } else {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+    }
+
+    public function api_delete(Request $request)
+    {
+        $product = Product::find($request->input('id'));
+
+        if ($product == null)
+        {
+            return response()->json([
+                'status' => 0,
+            ]);
+        }
+
+        if ($product->delete())
+        {
+            return response()->json([
+                'status' => 1,
+            ]);
+        }
+    }
+
+
+
+
 }

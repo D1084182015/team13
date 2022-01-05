@@ -1,9 +1,8 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>編輯市場資料</title>
-</head>
-<body>
+@extends('app')
+
+@section('title', '編輯單一市場資料')
+
+@section('product_contents')
 <h1>編輯市場資料</h1>
 <form method="post" action="/markets/{{$market->id}}">
     @method("put")
@@ -33,5 +32,4 @@
 
 
 </form>
-</body>
-</html>
+@endsection

@@ -1,9 +1,8 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>顯示單一市場資料</title>
-</head>
-<body>
+@extends('app')
+
+@section('title', '編輯單一市場資料')
+
+@section('product_contents')
 <h1>顯示單一市場資料</h1>
 <table border="1">
     <tr>
@@ -24,5 +23,4 @@
     </tr>
 
 </table>
-</body>
-</html>
+@endsection

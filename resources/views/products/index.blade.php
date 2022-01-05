@@ -1,14 +1,12 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>顯示所有農產品資料</title>
-</head>
-<br>
+@extends('app')
+
+@section('title', '農產品資料')
+
+@section('product_contents')
 <h1>顯示所有農產品資料</h1>
 <a href="{{ route('products.create') }}">新增農產品</a>&nbsp;
-<a href="{{ route('markets.index') }}">所有市場資料</a><br/>
+
 <h2></h2>
-<a href="{{ route('products.index') }}">所有農產品</a>&nbsp;
 <!--<a href="{{ route('products.senior') }}">高價產品</a>-->
 <a href="{{ route('products.banana') }}">香蕉</a>&nbsp;
 <a href="{{ route('products.apple') }}">蘋果</a>&nbsp;
@@ -62,5 +60,5 @@
         </tr>
     @endforeach
 </table>
-</body>
-</html>
+@endsection
+

@@ -1,9 +1,8 @@
-<html>
-<head>
-    <meta charset="UTF-8"/>
-    <title>新增市場資料</title>
-</head>
-<body>
+@extends('app')
+
+@section('title', '新增單一市場資料')
+
+@section('product_contents')
 <h1>新增市場資料</h1>
 <form method="post" action="/markets/">
     @csrf
@@ -29,5 +28,5 @@
 
 
 </form>
-</body>
-</html>
+@endsection
+
